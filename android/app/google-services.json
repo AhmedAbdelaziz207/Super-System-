@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "370281931765",
+    "project_id": "super-system-bf621",
+    "storage_bucket": "super-system-bf621.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370281931765:android:67e560329edcb9420336bc",
+        "android_client_info": {
+          "package_name": "com.superdev.basesupersystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKtHa0S4xcsVMxgs4aUm8a8ZyHphPaE1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
