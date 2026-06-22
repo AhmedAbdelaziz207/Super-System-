@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,39 +22,48 @@ class AppBottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.cardBackground,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
-        border: Border(
-          top: BorderSide(color: AppColors.cardBackgroundLight.withValues(alpha: 0.5)),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.primary.withValues(alpha: 0.12),
-            blurRadius: 20,
-            offset: const Offset(0, -4),
-          ),
-        ],
-      ),
-      child: SafeArea(
-        top: false,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: List.generate(_items.length, (index) {
-              final item = _items[index];
-              final isSelected = currentIndex == index;
-              return Expanded(
-                child: _NavItem(
-                  icon: item.icon,
-                  label: item.label,
-                  isSelected: isSelected,
-                  onTap: () => onTap(index),
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.only(bottom: 20.h, left: 32.w, right: 32.w),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30.r),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.cardBackground,
+                borderRadius: BorderRadius.circular(30.r),
+                border: Border.all(
+                  color: AppColors.outlineVariant,
+                  width: 1,
                 ),
-              );
-            }),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.2),
+                    blurRadius: 20,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: List.generate(_items.length, (index) {
+                    final item = _items[index];
+                    final isSelected = currentIndex == index;
+                    return Expanded(
+                      child: _NavItem(
+                        icon: item.icon,
+                        label: item.label,
+                        isSelected: isSelected,
+                        onTap: () => onTap(index),
+                      ),
+                    );
+                  }),
+                ),
+              ),
+            ),
           ),
         ),
       ),

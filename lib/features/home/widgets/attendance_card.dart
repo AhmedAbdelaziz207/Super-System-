@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,15 +25,19 @@ class AttendanceCard extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, AppRoutes.attendence);
       },
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.all(20.w),
-        decoration: BoxDecoration(
-          color: AppColors.cardBackground,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: AppColors.cardBackgroundLight, width: 1),
-        ),
-        child: Column(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+          child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(20.w),
+            decoration: BoxDecoration(
+              color: AppColors.cardBackground,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: AppColors.outlineVariant, width: 1),
+            ),
+            child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Row(
@@ -147,6 +152,8 @@ class AttendanceCard extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      ),
       ),
     );
   }

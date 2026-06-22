@@ -31,6 +31,7 @@ class _MainShellScreenState extends State<MainShellScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true, // Allows the body to go behind the bottom nav bar
       backgroundColor: AppColors.surface,
       body: IndexedStack(
         index: _currentIndex,
