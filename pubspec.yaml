@@ -45,9 +45,10 @@ dependencies:
   dio: ^5.9.2
   shared_preferences: ^2.5.3
   flutter_secure_storage: ^10.2.0
-  easy_notify: ^1.0.0
   flutter_local_notifications: ^17.2.4
   firebase_messaging: ^16.2.2
+  permission_handler: ^12.0.1
+  timezone: ^0.9.4
 
 dev_dependencies:
   flutter_test:

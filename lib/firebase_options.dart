@@ -57,12 +57,12 @@ class DefaultFirebaseOptions {
     projectId: 'super-system-bf621',
     storageBucket: 'super-system-bf621.firebasestorage.app',
   );
+
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDiMH27CJJg2T_95-bMTBIbzLaqDIGvu1M',
     appId: '1:370281931765:ios:b7cb63645e8e56350336bc',
     messagingSenderId: '370281931765',
     projectId: 'super-system-bf621',
     storageBucket: 'super-system-bf621.firebasestorage.app',
-    iosBundleId: 'com.superdev.basesupersystem',
   );
 }
